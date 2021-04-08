@@ -78,8 +78,6 @@ docker-compose restart fence-service
 docker exec -it fence-service fence-create sync --arborist http://arborist-service --yaml user.yaml
 ```
 
-- Also made a snapshot `user.yaml` copy here, for convenience. It may be outdated. But just to get the idea. 
-
 
 ## Upload Bucket
 

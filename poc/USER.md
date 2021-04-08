@@ -85,9 +85,9 @@ _Resource node creation (graph model) on given default Data Dictionary (DD)_
 
 ### Using Gen3 CLI Client
 
-- [Download](https://github.com/uc-cdis/cdis-data-client/releases/tag/2021.04) and install
+- [Download](https://github.com/uc-cdis/cdis-data-client/releases) and install the CLI, e.g.
 ```
-wget https://github.com/uc-cdis/cdis-data-client/releases/download/2021.04/dataclient_osx.zip
+wget https://github.com/uc-cdis/cdis-data-client/releases/download/2020.07/dataclient_osx.zip
 unzip dataclient_osx.zip
 mv gen3-client /usr/local/bin
 chmod +x /usr/local/bin/gen3-client
@@ -98,8 +98,7 @@ gen3-client --help
 
 - Configure
 ```
-cd ~/Download/
-gen3-client configure --profile=gen3 --cred=credentials.json --apiendpoint=https://gen3.dev.umccr.org/
+gen3-client configure --profile=gen3 --cred=~/Download/credentials.json --apiendpoint=https://gen3.dev.umccr.org/
 ```
 
 - Check auth
