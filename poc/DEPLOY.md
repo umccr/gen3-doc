@@ -29,7 +29,7 @@ docker-compose pull
 ```
 
 #### 4: Turn off guppy in `nginx.conf`
-> 🙋‍♂️ _here is the diff patch example, note that this is temporary, we will reinstate after uploading test metadata_
+> 🙋‍♂️ Heads-up, this is just temporary. We will reinstate the setting after uploading test metadata. Here is an example diff patch on changes.
 ```
 cat guppy_nginx_off.patch
 
@@ -57,7 +57,8 @@ index c8dd51e..9c4897f 100644
 docker-compose up -d
 ```
 
-##### 5.1. Wait and Make sure key services are UP
+##### 5.1. Wait and make sure key services are UP
+> 🙋‍♂️ We only need to UP this much of services at this point to ingest the initial simulated test metadata. Ignore other services even if they are down. 
 ```
 docker-compose ps postgres indexd-service arborist-service fence-service metadata-service sheepdog-service peregrine-service pidgin-service revproxy-service portal-service
 ```
