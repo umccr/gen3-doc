@@ -46,10 +46,12 @@ vim ${HOME}/.bashrc
 source ${HOME}/.bashrc
 
 # prepare the AWS profiles
+# NOTE: remove the credential_source, as it caused issues with Terraform 12 AWS provider (CredentialRequiresARNError)
+
 echo "[default]
 output = json
 region = ap-southeast-2
-credential_source = Ec2InstanceMetadata
+#credential_source = Ec2InstanceMetadata
 
 [profile cdistest]
 output = json
