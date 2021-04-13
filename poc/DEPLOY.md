@@ -4,11 +4,9 @@
 
 #### 1: Checkout the code
 ```
-git clone https://github.com/victorskl/gen3-compose-services
-cd gen3-compose-services
-git checkout fix/tube-etl-mapping
+git clone https://github.com/uc-cdis/compose-services.git
+cd compose-services
 ```
-> 🙋‍♂️ At the mo, this branch created [PR #83 for upstream](https://github.com/uc-cdis/compose-services/pull/83). You may peak into the [updated README](https://github.com/victorskl/gen3-compose-services/tree/fix/tube-etl-mapping) of the branch.
 
 #### 2: Setup Google OAuth2 client and credentials
 ```
