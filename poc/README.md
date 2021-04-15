@@ -8,6 +8,7 @@ The following are notes specific to our UMCCR setup. All Gen3 documentation shou
 
 ## Guides
 
+- [AWS](AWS.md)
 - [ADMIN](ADMIN.md)
 - [USER](USER.md)
 - [DEPLOY](DEPLOY.md)

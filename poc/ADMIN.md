@@ -4,7 +4,8 @@
 ## POC Setup
 
 - POC setup use [hibernating EC2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html) to host and run Gen3 [compose-services](https://github.com/uc-cdis/compose-services) docker stack.
-- It is then front-ed by Route53 + ACM SSL certificate with ALB -- [Application Load-Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html). See corresponding [terraform stack](https://github.com/umccr/infrastructure/tree/master/terraform/stacks/gen3_compose) for details.
+- It is then front-ed by Route53 + ACM SSL certificate with ALB -- [Application Load-Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html).
+- See corresponding [AWS](AWS.md) note for details.
 
 ### Launch POC instance
 
