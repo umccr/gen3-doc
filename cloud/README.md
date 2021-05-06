@@ -62,6 +62,12 @@ region = ap-southeast-2" > ~/.aws/config
 
 ## Part 2 Start Gen3 - Infrastructure
 
+NOTE: make sure the Gen3 env name is no longer than 14 characters, as other resouece names (specifically the AWS Elastic Search domain) are derived from it and have size limitations attached.
+```bash
+# should be no longer than 14 characters
+gen3 api environment
+```
+
 ```bash
 gen3 workon cdistest umccr-commons-test
 # may have to create S3 bucket manually if TF raises issues
