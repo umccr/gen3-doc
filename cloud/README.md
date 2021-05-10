@@ -40,7 +40,7 @@ UMCCR setup:
 - Gen3 config/data volume in addition to the default root volume (see below)
 - custom user `gen3-user`
 
-Gen3 deployment/management scripts depend on the `$HOME` variable, hence it's easiest to setup Gen3 from the users home directory. We currently craete EC2 volume snapshots in order to preserve the Gen2 setup/configuration. To keep these snapshots small and facilitate reuse across instances (which is difficult with root volumes), we add a second volume to the instance. We generate a new OS user with a custom `$HOME` directory in order to split this data from the default root volume.
+Gen3 deployment/management scripts depend on the `$HOME` variable, hence it's easiest to setup Gen3 from the users home directory. We currently craete EC2 volume snapshots in order to preserve the Gen3 setup/configuration. To keep these snapshots small and facilitate reuse across instances (which is difficult with root volumes), we add a second volume to the instance. We generate a new OS user with a custom `$HOME` directory in order to split this data from the default root volume.
 
 
 
