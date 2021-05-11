@@ -85,20 +85,13 @@ _Mapping uploaded file_
 - It opens project page https://gen3.cloud.dev.umccr.org/umccr-cup
 - Click "Experimental Metadata"
 
-- File can access by GUID (`object_id`) as follows:
+- File can access by GUID (aka `object_id`) as follows:
 
 **By UI:**
 - https://gen3.cloud.dev.umccr.org/files/f5c4e255-2bbf-4026-9fbd-4dec3ae5f886
   
-**Index:**
-```
-curl -s https://gen3.cloud.dev.umccr.org/index/f5c4e255-2bbf-4026-9fbd-4dec3ae5f886 | jq
-```
-
-**DRS:**
-```
-curl -s https://gen3.cloud.dev.umccr.org/ga4gh/drs/v1/objects/f5c4e255-2bbf-4026-9fbd-4dec3ae5f886 | jq
-```
+**By API:**
+- See [using-api](using-api.md)
 
 
 ## REF
