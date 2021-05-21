@@ -94,6 +94,14 @@ _Mapping uploaded file_
 - See [using-api](using-api.md)
 
 
+### More Metadata
+
+- By this far, we have only done a partial data submission, that is: 
+  - uploaded a data file (that created Globally Unique ID -- GUID)
+  - populated its minimal metadata (i.e. _Map Files_ to _core_metadata_collection_ node) only
+  - there are still other nodes in data model Graph that you should supplement to this data submission
+- Please refer Jim's tutorial on [Submitting Data to a Gen3 Commons](https://www.youtube.com/watch?v=F2EOtHPg6g8) for how to submit a complete metadata to conform the specified Data Dictionary model (DCF Dictionary in this case).
+
 ## REF
 
 - [Gen3 Data Commons - Data Upload Tutorial](https://www.youtube.com/watch?v=QxQKXlbFt00)
