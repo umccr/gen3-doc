@@ -1,5 +1,13 @@
 # Data Submission
 
+In this exercise, we will be submitting "Experimental Metadata File". A subset of data model graph as follows.
+
+<details>
+  <summary>Click to expand!</summary>
+
+  ![experimental_metadata_file.png](img/experimental_metadata_file.png)
+</details>
+
 ### Step 1
 
 - You should have appropriate permission for a project under a program for data submission.
