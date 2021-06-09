@@ -13,6 +13,11 @@ Contains documentation and notes for UMCCR Gen3 setup
 - [User Guide](user-guide) (for Cloud Setup)
 - [Workshop](workshop) (contains ongoing discussion around setup)
 
+### Deployment Manifest
+
+The following repo contains Cloud Automation deployment manifest for UMCCR managed Data Commons sites.
+
+- https://github.com/umccr/cdis-manifest
 
 ### Data Dictionary
 
