@@ -2,10 +2,14 @@
 
 Contains documentation and notes for UMCCR Gen3 setup
 
+### Context
+
+Establishing Gen3 to enable better Human Genome Data sharing in Australia
+- https://www.biocommons.org.au/gen3-project
+
 ### POC
 
 - [POC Setup](poc)
-
 
 ### Production
 

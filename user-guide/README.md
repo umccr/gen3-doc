@@ -1,6 +1,6 @@
 # User Guide for Cloud Setup
 
-_Cloud Setup is also known as Kubernetes Cluster ([EKS](https://aws.amazon.com/eks/)) setup or Production Setup_
+_Cloud Setup is also known as Kubernetes Cluster ([EKS](https://aws.amazon.com/eks/)) setup or Production setup using Cloud Automation_
 
 > Depends on your login account permission, you may perform the following activity as a user.
 
