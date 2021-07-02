@@ -1,12 +1,26 @@
 # Data Submission
 
-In this exercise, we will be submitting "Experimental Metadata File". A subset of data model graph as follows.
+In this exercise, we will be submitting "Experimental Metadata File". A subset of data model graph as follows:
 
-<details>
-  <summary>Click to expand!</summary>
+![experimental_metadata_file.png](img/experimental_metadata_file.png)
 
-  ![experimental_metadata_file.png](img/experimental_metadata_file.png)
-</details>
+- In order to submit a "Metadata File", we have to fulfil the️ data graph path whereas:
+  - Program (Administrative node)
+  - Project (Administrative node)
+  - Experiment (Administrative node)
+  - Core Metadata Collection (Administrative node)
+  - Experimental Metadata (Metadata File node)
+  - Take note on: 
+    - Black line (Operational Link)
+    - Orange line (Required Link)
+
+- [Programs and Projects](program-project.md) are typically created by Program Manager.
+
+- There are two possible routes in the path. You can take either through:
+  - Experiment node, or
+  - Core Metadata Collection node
+  
+- In the following, we are mapping the path through "Core Metadata Collection" node. Hence, let's create an instance of "Core Metadata Collection".
 
 ### Step 1
 
@@ -33,7 +47,7 @@ In this exercise, we will be submitting "Experimental Metadata File". A subset o
 
 _Installing Gen3 CLI Client_
 
-- [Download](https://github.com/uc-cdis/cdis-data-client/releases) and install the CLI, e.g.
+- [Download](https://github.com/uc-cdis/cdis-data-client/releases) and install the CLI, e.g. for macOS:
 ```
 wget https://github.com/uc-cdis/cdis-data-client/releases/download/2021.05/dataclient_osx.zip
 unzip dataclient_osx.zip
@@ -91,8 +105,7 @@ _Mapping uploaded file_
 - From top navigation menu or home page, click "Submit Data" button, which in-turn open to https://gen3.cloud.dev.umccr.org/submission
 - At "List of Projects" section, select `umccr-cup` by clicking "Submit Data" button (also observe file count)
 - It opens project page https://gen3.cloud.dev.umccr.org/umccr-cup
-- Click "Experimental Metadata"
-
+- Click "Experimental Metadata" > Click "View" or "Download" > to look for `object_id`
 - File can access by GUID (aka `object_id`) as follows:
 
 **By UI:**
@@ -105,10 +118,16 @@ _Mapping uploaded file_
 ### More Metadata
 
 - By this far, we have only done a partial data submission, that is: 
-  - uploaded a data file (that created Globally Unique ID -- GUID)
-  - populated its minimal metadata (i.e. _Map Files_ to _core_metadata_collection_ node) only
-  - there are still other nodes in data model Graph that you should supplement to this data submission
-- Please refer Jim's tutorial on [Submitting Data to a Gen3 Commons](https://www.youtube.com/watch?v=F2EOtHPg6g8) for how to submit a complete metadata to conform the specified Data Dictionary model (DCF Dictionary in this case).
+  - Uploaded a data file (that created Globally Unique ID -- GUID)
+  - Populated its minimal metadata (i.e. _Map Files_ to _core_metadata_collection_ node) only
+  - There are still other nodes in data model Graph that you should supplement to this data submission
+  - You can view this by going into the project view:
+    - Top Menu > Submit Data > List of Projects > umccr-cup > Click "Submit Data" button
+  - Clicking on "Toggle view" button will show a complete metadata graph that will have to fulfil a complete data submission 
+
+![experimental_metadata_file_graph.png](img/experimental_metadata_file_graph.png)
+
+- Please refer Jim's tutorial on [Submitting Data to a Gen3 Commons](https://www.youtube.com/watch?v=F2EOtHPg6g8) for how to submit a complete metadata to conform the specified Data Dictionary model.
 
 ## REF
 

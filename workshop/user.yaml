@@ -7,12 +7,10 @@ authz:
   all_users_policies: []
 
   groups:
-  # can CRUD programs and projects and upload data files
-  - name: data_submitters
+  # a user group who can create programs and projects
+  - name: program_managers
     policies:
     - services.sheepdog-admin
-#    - data_upload
-#    - MyFirstProject_submitter
     users:
     - foo.bar@umccr.org
     - foo.bar
