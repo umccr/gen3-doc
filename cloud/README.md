@@ -12,5 +12,5 @@ The following notes contain our UMCCR Gen3 setup. All Gen3 documentation should 
 
 - [AWS](AWS.md)
 - [DEPLOY](DEPLOY.md)
-- [USER](../user-guide/README.md)
+- [USER](../user-guide)
 - [WORKSHOP](../workshop)

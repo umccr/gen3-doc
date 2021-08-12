@@ -14,8 +14,6 @@ Establishing Gen3 to enable better Human Genome Data sharing in Australia
 ### Production
 
 - [Cloud Setup](cloud)
-- [User Guide](user-guide) (for Cloud Setup)
-- [Workshop](workshop) (contains ongoing discussion around setup)
 
 ### Deployment Manifest
 
