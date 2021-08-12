@@ -47,7 +47,7 @@ _or Program Enrollment Signup_
 
 - At this moment, applying to a particular dataset consent is **manual**. You will need to **contact Admin**(s) with
   - Your (gen3) username -- typically `firstname.lastname`
-  - A particular program or project or dataset, if known
+  - A particular **program** or **project** or **dataset**, if known
   - Admin will then update authorization (AuthZ)
 
 

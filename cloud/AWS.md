@@ -34,7 +34,7 @@
  
 - Gen3 application services – [microservices](https://gen3.org/resources/developer/microservice/) – are running on Kubernetes cluster with [Horizontal Pod Autoscaler (HPA)](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/). This allows dynamically scaling of application services by monitoring Kubernetes Pods' metrics (CPU/Memory utilisation, etc).
 - This then, through **_Managed_** EKS, it in-turn triggers auto-scaling of actual worker nodes/VMs. These workers are setting up to use AWS EC2 **_Auto Scaling Group_** (ASG).
-- For databases and persistent layer, scaling up is possible through AWS Managed RDS and Elasticsearch services.
+- For databases and persistent layer, scaling up is possible through AWS **_Managed_** RDS and Elasticsearch services.
 
 ### Can you share cost estimation for running properly architected production-ready Gen3 instance?
 
