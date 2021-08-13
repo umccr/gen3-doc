@@ -325,6 +325,23 @@ green open file_0              Q4vU-nxSSTCOfSzci5H6_w 5 1 60 0 847.3kb 423.6kb
 ****
 ```
 
+### Portal Config
+
+- Create or modify in portal config directory e.g. `cdis-manifest/gen3.cloud.dev.umccr.org/portal/`
+
+```
+gitops.css
+gitops-logo.png
+gitops-favicon.ico
+gitops.json
+```
+
+- Tune CSS according to your need
+- Make sure, in `manifest.json` **_global_** block > **_portal_app_** has `gitops`. Not `dev` nor any other value; example see [this line](https://github.com/umccr/cdis-manifest/blob/master/gen3.cloud.dev.umccr.org/manifest.json#L222)
+- Then, delete Portal config and setup again, like so:
+```
+kubectl delete secret portal-config && gen3 kube-setup-portal
+```
 
 ### CILogon
 

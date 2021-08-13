@@ -2,7 +2,7 @@
 
 > **DISCLAIMER:** The following are **our best estimate pointer** for those who like to ops Gen3 platform. The following specs and tech stack are _empirical observation_ through our pilot run -- which **may not hold true** for any other variations.
 
-> **NOTE:** Cloud Automation setup may not well fit for those who like to do quick POC/prototype. For that, please see notes on [POC](../poc/README.md).
+> **NOTE:** Cloud Automation setup may not well fit for those who like to do quick POC/prototype. For that, please see notes on [POC](../poc).
 
 ### Do you have a very broad estimate of what you're using on AWS to support the current Gen3 instance?
 
@@ -47,11 +47,13 @@ We'd recommend, a good decent years (minimum 3/4+) of experience on dealing with
 - AWS 
 - Exposure to Cluster and Cloud computing
 - Terraform
-- Kubernetes and Docker
-- Python, Bash, Linux
+- Kubernetes, Docker, Linux
+- Python, Bash, Go, JavaScript
+- Ability to debug Python/Bash code with minimal supervision
 - ElasticSearch
 - PostgreSQL (or equivalent DBA skill)
+- Familiar with GraphQL, Graph and DAG, ETL process
+- Basic knowledge of ReactJS SPA, building React app
 - Experience integrating Microservices application system
 - Experience integrating Identity Provider (IdP), Federated AuthN/Z and Single-SignOn (SSO) setup
-- Ability to debug Python/Bash code with minimum supervision
 - Good troubleshooting skills
