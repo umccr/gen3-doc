@@ -14,6 +14,7 @@ These are notes on the UMCCR specific setup of the [Gen3 cloud deployment][1].
 		- [SSJDISPATCHER](#ssjdispatcher)
 		- [Fence](#fence)
 		- [Tube](#tube)
+		- [Portal Config](#portal-config)
 		- [CILogon](#cilogon)
 
 
