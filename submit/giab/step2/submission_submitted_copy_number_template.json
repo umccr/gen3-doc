@@ -1,0 +1,74 @@
+[
+  {
+    "aliquots": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "file_name": "AJTrio.HG002.mrcanavar_copynumbers.bed.gz",
+    "file_size": 17194597,
+    "data_type": "Copy Numbers",
+    "consent_codes": null,
+    "object_id": "c8434fe0-535d-4de9-8d6f-ea16769d6f65",
+    "data_category": "Copy Numbers",
+    "read_groups": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "submitter_id": "AJTrio.HG002.mrcanavar_copynumbers.bed.gz",
+    "core_metadata_collections": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "data_format": "BED",
+    "type": "submitted_copy_number",
+    "state_comment": null,
+    "experimental_strategy": "bcftool",
+    "md5sum": "20d527511bf71b8d1a7f2db6bb362398",
+    "urls": "s3://umccr-gen3-giab/data/AshkenazimTrio/analysis/BilkentUni_IlluminaHiSeq_VariationHunter_mrCaNaVar_08282015/AJTrio.HG002.mrcanavar_copynumbers.bed.gz"
+  },
+  {
+    "aliquots": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "file_name": "AJTrio.HG003.mrcanavar_copynumbers.bed.gz",
+    "file_size": 17221394,
+    "data_type": "Copy Numbers",
+    "consent_codes": null,
+    "object_id": "d53aa4a0-1655-4382-ab6c-7fdefd7aebbb",
+    "data_category": "Copy Numbers",
+    "read_groups": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "submitter_id": "AJTrio.HG003.mrcanavar_copynumbers.bed.gz",
+    "core_metadata_collections": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "data_format": "BED",
+    "type": "submitted_copy_number",
+    "state_comment": null,
+    "experimental_strategy": "bcftool",
+    "md5sum": "7faf32a5713c7f66403a0f5e3ee08068",
+    "urls": "s3://umccr-gen3-giab/data/AshkenazimTrio/analysis/BilkentUni_IlluminaHiSeq_VariationHunter_mrCaNaVar_08282015/AJTrio.HG003.mrcanavar_copynumbers.bed.gz"
+  },
+  {
+    "aliquots": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "file_name": "AJTrio.HG004.mrcanavar_copynumbers.bed.gz",
+    "file_size": 17101519,
+    "data_type": "Copy Numbers",
+    "consent_codes": null,
+    "object_id": "1008a2d3-3815-4e76-82ae-3b06d708a535",
+    "data_category": "Copy Numbers",
+    "read_groups": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "submitter_id": "AJTrio.HG004.mrcanavar_copynumbers.bed.gz",
+    "core_metadata_collections": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "data_format": "BED",
+    "type": "submitted_copy_number",
+    "state_comment": null,
+    "experimental_strategy": "bcftool",
+    "md5sum": "25497ba28933e268a6f1dc1271cfad8b",
+    "urls": "s3://umccr-gen3-giab/data/AshkenazimTrio/analysis/BilkentUni_IlluminaHiSeq_VariationHunter_mrCaNaVar_08282015/AJTrio.HG004.mrcanavar_copynumbers.bed.gz"
+  }
+]

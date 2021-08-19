@@ -1,0 +1,32 @@
+[
+  {
+    "disease_type": null,
+    "primary_site": null,
+    "consent_codes": null,
+    "projects": {
+      "code": "giab"
+    },
+    "submitter_id": "NA12878",
+    "type": "subject"
+  },
+  {
+    "disease_type": null,
+    "primary_site": null,
+    "consent_codes": null,
+    "projects": {
+      "code": "giab"
+    },
+    "submitter_id": "AshkenazimTrio",
+    "type": "subject"
+  },
+  {
+    "disease_type": null,
+    "primary_site": null,
+    "consent_codes": null,
+    "projects": {
+      "code": "giab"
+    },
+    "submitter_id": "NA12878_NA24385_mixture",
+    "type": "subject"
+  }
+]

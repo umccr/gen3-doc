@@ -1,0 +1,13 @@
+{
+  "date_collected": null, 
+  "availability_mechanism": null, 
+  "dbgap_accession_number": "umccr123.giab",
+  "code": "giab",
+  "name": "giab",
+  "investigator_affiliation": null, 
+  "availability_type": null, 
+  "support_source": null, 
+  "type": "project", 
+  "support_id": null,
+  "investigator_name": "Sean"
+}

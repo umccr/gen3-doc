@@ -1,0 +1,21 @@
+[
+  {
+    "file_name": "HG001.GRCh38_full_plus_hs38d1_analysis_set_minus_alts.300x.bam.bai",
+    "file_size": 12006264,
+    "data_type": "Aligned Reads Index",
+    "consent_codes": null,
+    "object_id": "86807aa8-3be0-4db6-8899-21ba18caf112",
+    "data_category": "Sequencing Reads",
+    "submitter_id": "HG001.GRCh38_full_plus_hs38d1_analysis_set_minus_alts.300x.bam.bai",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878"
+    },
+    "data_format": "BAI",
+    "type": "aligned_reads_index",
+    "state_comment": null,
+    "submitted_aligned_reads_files": {
+      "submitter_id": "HG001.GRCh38_full_plus_hs38d1_analysis_set_minus_alts.300x.bam"
+    },
+    "md5sum": "00fd8ac75a92daf341e79008e7e9d900"
+  }
+]

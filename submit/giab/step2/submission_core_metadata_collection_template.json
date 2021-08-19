@@ -1,0 +1,65 @@
+[
+  {
+    "format": null,
+    "rights": null,
+    "subject": "NA12878",
+    "data_type": null,
+    "creator": null,
+    "publisher": null,
+    "language": null,
+    "projects": {
+      "code": "giab"
+    },
+    "title": null,
+    "description": null,
+    "relation": null,
+    "submitter_id": "NA12878",
+    "source": null,
+    "coverage": null,
+    "type": "core_metadata_collection",
+    "contributor": null,
+    "date": "2016-03-07"
+  },
+  {
+    "format": null,
+    "rights": null,
+    "subject": "AshkenazimTrio",
+    "data_type": null,
+    "creator": null,
+    "publisher": null,
+    "language": null,
+    "projects": {
+      "code": "giab"
+    },
+    "title": null,
+    "description": null,
+    "relation": null,
+    "submitter_id": "AshkenazimTrio",
+    "source": null,
+    "coverage": null,
+    "type": "core_metadata_collection",
+    "contributor": null,
+    "date": "2018-08-21"
+  },
+  {
+    "format": null,
+    "rights": null,
+    "subject": "NA12878_NA24385_mixture",
+    "data_type": null,
+    "creator": null,
+    "publisher": null,
+    "language": null,
+    "projects": {
+      "code": "giab"
+    },
+    "title": null,
+    "description": null,
+    "relation": null,
+    "submitter_id": "NA12878_NA24385_mixture",
+    "source": null,
+    "coverage": null,
+    "type": "core_metadata_collection",
+    "contributor": null,
+    "date": "2017-05-17"
+  }
+]

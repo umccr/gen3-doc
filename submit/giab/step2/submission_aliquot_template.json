@@ -1,0 +1,44 @@
+[
+  {
+    "amount": 100,
+    "aliquot_volume": null,
+    "analyte_type": null,
+    "source_center": null,
+    "concentration": null,
+    "submitter_id": "NA12878",
+    "aliquot_quantity": null,
+    "samples": {
+      "submitter_id": "NA12878"
+    },
+    "type": "aliquot",
+    "analyte_type_id": "D"
+  },
+  {
+    "amount": 100,
+    "aliquot_volume": null,
+    "analyte_type": null,
+    "source_center": null,
+    "concentration": null,
+    "submitter_id": "AshkenazimTrio",
+    "aliquot_quantity": null,
+    "samples": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "type": "aliquot",
+    "analyte_type_id": "E"
+  },
+  {
+    "amount": 100,
+    "aliquot_volume": null,
+    "analyte_type": null,
+    "source_center": null,
+    "concentration": null,
+    "submitter_id": "NA12878_NA24385_mixture",
+    "aliquot_quantity": null,
+    "samples": {
+      "submitter_id": "NA12878_NA24385_mixture"
+    },
+    "type": "aliquot",
+    "analyte_type_id": "W"
+  }
+]

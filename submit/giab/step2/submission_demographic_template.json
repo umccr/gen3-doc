@@ -1,0 +1,38 @@
+[
+  {
+    "subjects": {
+      "submitter_id": "NA12878"
+    },
+    "gender": "male",
+    "ethnicity": "hispanic or latino",
+    "year_of_birth": 1962,
+    "race": "white",
+    "submitter_id": "NA12878",
+    "year_of_death": null,
+    "type": "demographic"
+  },
+  {
+    "subjects": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "gender": "female",
+    "ethnicity": "Unknown",
+    "year_of_birth": 1978,
+    "race": "white",
+    "submitter_id": "AshkenazimTrio",
+    "year_of_death": null,
+    "type": "demographic"
+  },
+  {
+    "subjects": {
+      "submitter_id": "NA12878_NA24385_mixture"
+    },
+    "gender": "male",
+    "ethnicity": "hispanic or latino",
+    "year_of_birth": 1962,
+    "race": "white",
+    "submitter_id": "NA12878_NA24385_mixture",
+    "year_of_death": null,
+    "type": "demographic"
+  }
+]

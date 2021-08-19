@@ -1,0 +1,104 @@
+[
+  {
+    "current_weight": null,
+    "tissue_type": null,
+    "type": "sample",
+    "initial_weight": null,
+    "preservation_method": null,
+    "biospecimen_anatomic_site": "Abdomen",
+    "time_between_clamping_and_freezing": null,
+    "oct_embedded": null,
+    "sample_volume": null,
+    "tumor_code_id": null,
+    "method_of_sample_procurement": null,
+    "shortest_dimension": null,
+    "longest_dimension": null,
+    "composition": "Bone Marrow Components",
+    "diagnosis_pathologically_confirmed": null,
+    "tumor_descriptor": null,
+    "freezing_method": null,
+    "time_between_excision_and_freezing": null,
+    "subjects": {
+      "submitter_id": "NA12878"
+    },
+    "days_to_sample_procurement": null,
+    "intermediate_dimension": null,
+    "is_ffpe": false,
+    "tumor_code": null,
+    "days_to_collection": null,
+    "diagnoses": {
+      "submitter_id": "NA12878"
+    },
+    "submitter_id": "NA12878",
+    "sample_type_id": null,
+    "sample_type": null
+  },
+  {
+    "current_weight": null,
+    "tissue_type": null,
+    "type": "sample",
+    "initial_weight": null,
+    "preservation_method": null,
+    "biospecimen_anatomic_site": "Breast",
+    "time_between_clamping_and_freezing": null,
+    "oct_embedded": null,
+    "sample_volume": null,
+    "tumor_code_id": null,
+    "method_of_sample_procurement": null,
+    "shortest_dimension": null,
+    "longest_dimension": null,
+    "composition": "Cell",
+    "diagnosis_pathologically_confirmed": null,
+    "tumor_descriptor": null,
+    "freezing_method": null,
+    "time_between_excision_and_freezing": null,
+    "subjects": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "days_to_sample_procurement": null,
+    "intermediate_dimension": null,
+    "is_ffpe": false,
+    "tumor_code": null,
+    "days_to_collection": null,
+    "diagnoses": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "submitter_id": "AshkenazimTrio",
+    "sample_type_id": null,
+    "sample_type": null
+  },
+  {
+    "current_weight": null,
+    "tissue_type": null,
+    "type": "sample",
+    "initial_weight": null,
+    "preservation_method": null,
+    "biospecimen_anatomic_site": "Breast",
+    "time_between_clamping_and_freezing": null,
+    "oct_embedded": null,
+    "sample_volume": null,
+    "tumor_code_id": null,
+    "method_of_sample_procurement": null,
+    "shortest_dimension": null,
+    "longest_dimension": null,
+    "composition": "Circulating Tumor Cell (CTC)",
+    "diagnosis_pathologically_confirmed": null,
+    "tumor_descriptor": null,
+    "freezing_method": null,
+    "time_between_excision_and_freezing": null,
+    "subjects": {
+      "submitter_id": "NA12878_NA24385_mixture"
+    },
+    "days_to_sample_procurement": null,
+    "intermediate_dimension": null,
+    "is_ffpe": true,
+    "tumor_code": null,
+    "days_to_collection": null,
+    "diagnoses": {
+      "submitter_id": "NA12878_NA24385_mixture"
+    },
+    "submitter_id": "NA12878_NA24385_mixture",
+    "sample_type_id": null,
+    "sample_type": null
+  }
+]

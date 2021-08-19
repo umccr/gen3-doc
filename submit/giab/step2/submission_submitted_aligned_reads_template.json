@@ -1,0 +1,23 @@
+[
+  {
+    "file_name": "HG001.GRCh38_full_plus_hs38d1_analysis_set_minus_alts.300x.bam",
+    "file_size": 589702020566,
+    "data_type": "Aligned Reads",
+    "consent_codes": null,
+    "object_id": "829324d8-00ad-4c03-ad7b-7b3fe0331b39",
+    "data_category": "Sequencing Reads",
+    "read_groups": {
+      "submitter_id": "NA12878"
+    },
+    "submitter_id": "HG001.GRCh38_full_plus_hs38d1_analysis_set_minus_alts.300x.bam",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878"
+    },
+    "data_format": "BAM",
+    "type": "submitted_aligned_reads",
+    "state_comment": null,
+    "experimental_strategy": "WGS",
+    "md5sum": "f48bf321c34f32b7c08feb17b9e5b220",
+    "urls": "s3://umccr-gen3-giab/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/NHGRI_Illumina300X_novoalign_bams/HG001.GRCh38_full_plus_hs38d1_analysis_set_minus_alts.300x.bam"
+  }
+]

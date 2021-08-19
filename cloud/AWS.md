@@ -48,7 +48,7 @@ We'd recommend, a good decent years (minimum 3/4+) of experience on dealing with
 - Exposure to Cluster and Cloud computing
 - Terraform
 - Kubernetes, Docker, Linux
-- Python, Bash, Go, JavaScript
+- Python, Bash (optionally Go, JavaScript)
 - Ability to debug Python/Bash code with minimal supervision
 - ElasticSearch
 - PostgreSQL (or equivalent DBA skill)

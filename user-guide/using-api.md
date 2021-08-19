@@ -9,13 +9,16 @@ _Using API to programmatically access Gen3 services' endpoints_
 - First, download **API Key** by visiting to your [Profile](https://gen3.cloud.dev.umccr.org/identity) > Create API key > download `credentials.json`
 - Next, acquire short-lived (1 hour) bearer token from Fence service as follows:
 ```
-cd ~/Downloads
+cd $HOME
+mkdir -p "$HOME/.gen3/"
+
 curl -s -X POST https://gen3.cloud.dev.umccr.org/user/credentials/api/access_token \
-  -d @credentials.json -H "Content-Type: application/json" -o gen3_token.json
+  -d @"$HOME/.gen3/credentials.json" -H "Content-Type: application/json" -o gen3_token.json
 ```
+
 - Export token as environment variable
 ```
-export GEN3_TOKEN=$(jq -r '.access_token' ~/Downloads/gen3_token.json)
+export GEN3_TOKEN=$(jq -r '.access_token' ./gen3_token.json)
 env | grep GEN3_TOKEN
 ```
 
@@ -41,12 +44,12 @@ _[GA4GH Data Repository Service API](https://ga4gh.github.io/data-repository-ser
 
 - Get DRS Object
 ```
-curl -s https://gen3.cloud.dev.umccr.org/ga4gh/drs/v1/objects/f5c4e255-2bbf-4026-9fbd-4dec3ae5f886 | jq
+curl -s "https://gen3.cloud.dev.umccr.org/ga4gh/drs/v1/objects/cf778361-6f6f-4128-8673-93ca69111c93" | jq
 ```
 
 - Get (PreSigned) URL for fetching DRS Object bytes
 ```
-curl -s -H "Authorization: Bearer $GEN3_TOKEN" https://gen3.cloud.dev.umccr.org/ga4gh/drs/v1/objects/f5c4e255-2bbf-4026-9fbd-4dec3ae5f886/access/s3 | jq
+curl -s -H "Authorization: Bearer $GEN3_TOKEN" "https://gen3.cloud.dev.umccr.org/ga4gh/drs/v1/objects/cf778361-6f6f-4128-8673-93ca69111c93/access/s3" | jq
 ```
 
 

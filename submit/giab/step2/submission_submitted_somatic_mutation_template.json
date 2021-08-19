@@ -1,0 +1,68 @@
+[
+  {
+    "file_name": "na12878-na24385-somatic-truth.vcf.gz",
+    "file_size": 19068725,
+    "data_type": "Variants",
+    "total_variants": null,
+    "consent_codes": null,
+    "object_id": "e86903ec-de55-42ac-82bf-dc22116aa14b",
+    "data_category": "Variants",
+    "read_groups": {
+      "submitter_id": "NA12878_NA24385_mixture"
+    },
+    "submitter_id": "na12878-na24385-somatic-truth.vcf.gz",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878_NA24385_mixture"
+    },
+    "data_format": "VCF",
+    "type": "submitted_somatic_mutation",
+    "state_comment": null,
+    "experimental_strategy": "bcftool",
+    "md5sum": "48167239041c37c6d3f83a978d527e1f",
+    "urls": "s3://umccr-gen3-giab/use_cases/mixtures/UMCUTRECHT_NA12878_NA24385_mixture_10052016/na12878-na24385-somatic-truth.vcf.gz"
+  },
+  {
+    "file_name": "na12878-na24385-somatic-truth-regions.bed",
+    "file_size": 41781594,
+    "data_type": "BED",
+    "total_variants": null,
+    "consent_codes": null,
+    "object_id": "dfae380e-f190-49ea-9633-6e1dde82d621",
+    "data_category": "Variants",
+    "read_groups": {
+      "submitter_id": "NA12878_NA24385_mixture"
+    },
+    "submitter_id": "na12878-na24385-somatic-truth-regions.bed",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878_NA24385_mixture"
+    },
+    "data_format": "BED",
+    "type": "submitted_somatic_mutation",
+    "state_comment": null,
+    "experimental_strategy": "bcftool",
+    "md5sum": "c6e90dd237e884d2c8576548c3f64b2c",
+    "urls": "s3://umccr-gen3-giab/use_cases/mixtures/UMCUTRECHT_NA12878_NA24385_mixture_10052016/na12878-na24385-somatic-truth-regions.bed"
+  },
+  {
+    "file_name": "AJTrio.mrcanavar.segdups.bilkentuniv.082815.vcf.gz",
+    "file_size": 54343,
+    "data_type": "Variants",
+    "total_variants": null,
+    "consent_codes": null,
+    "object_id": "cf778361-6f6f-4128-8673-93ca69111c93",
+    "data_category": "Variants",
+    "read_groups": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "submitter_id": "AJTrio.mrcanavar.segdups.bilkentuniv.082815.vcf.gz",
+    "core_metadata_collections": {
+      "submitter_id": "AshkenazimTrio"
+    },
+    "data_format": "VCF",
+    "type": "submitted_somatic_mutation",
+    "state_comment": null,
+    "experimental_strategy": "bcftool",
+    "md5sum": "0ddc38a46fbfba52fb0074355a75cd76",
+    "urls": "s3://umccr-gen3-giab/data/AshkenazimTrio/analysis/BilkentUni_IlluminaHiSeq_VariationHunter_mrCaNaVar_08282015/AJTrio.mrcanavar.segdups.bilkentuniv.082815.vcf.gz"
+  }
+]
