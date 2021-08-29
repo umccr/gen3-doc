@@ -1,0 +1,32 @@
+# CILogon
+
+## Related
+
+See also
+
+- [Workshop](../workshop) notes for ongoing AAI discussion
+- User Guide [Login & Signup](../user-guide/login-signup.md) section
+
+## Configure CILogon with Gen3 Fence
+
+> The support for CILogon in the Fence service was implemented by [Scott Koranda](https://github.com/skoranda) with Pull Request [#896](https://github.com/uc-cdis/fence/pull/896).
+
+Update the Cloud Automation deployment manifest to use `fence:2021.08` or recent release.
+
+```bash
+# update fence version (if needed)
+vim $HOME/cdis-manifest/gen3.cloud.dev.umccr.org/manifest.json
+
+  "fence": "quay.io/cdis/fence:2021.08"
+```
+
+Enable CILogon in the Fence config. An example can be found in the [config-default.yaml](https://github.com/uc-cdis/fence/blob/master/fence/config-default.yaml).
+```bash
+vim $HOME/Gen3Secrets/apis_configs/fence-config.yaml
+```
+
+To get the `client_id` and `client_secret` you create a new `OIDC Client` in your COmanage Registry account (`Configuration` menu). Don't forget to add LDAP to Claim mapping that maps LDAP Attribute Name `voPersonApplicationUID;app-gen3` to OIDC Claim Name `sub` to get a readable and consistent username (even if you link multiple identities to your COmanage account).
+
+## COmanage Registry
+
+TODO

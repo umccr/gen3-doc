@@ -346,23 +346,7 @@ kubectl delete secret portal-config && gen3 kube-setup-portal
 
 ### CILogon
 
-The support for CILogon in the Fence service was implemented by Scott Koranda with Pull Request [#896][8].
-
-NOTE: Although this PR was merged before the current production release (`2021.05`) of Gen3, the release does not include Scott's changes. We therefore selected the `master` version of the Fence container, which does support CILogon (update the Kubernetes manifest).
-
-```bash
-# update fence version (if needed)
-vim $HOME/cdis-manifest/gen3.cloud.dev.umccr.org/manifest.json
-```
-
-Enable CILogon in the Fence config. An example can be found in the [config-default.yaml][9].
-```bash
-vim $HOME/Gen3Secrets/apis_configs/fence-config.yaml
-```
-
-To get the `client_id` and `client_secret` you create a new `OIDC Client` in your COmanage account (`Configuration` menu).
-Don't forget to add a LDAP to Claim mapping that maps LDAP Attribute Name `voPersonApplicationUID;app-gen3` to OIDC Claim Name `sub` to get a readable and consistant user name (even if you link multiple identities to your COmanage account).
-
+See [cilogon](../cilogon)
 
 
 [1]: https://github.com/uc-cdis/cloud-automation
@@ -372,5 +356,3 @@ Don't forget to add a LDAP to Claim mapping that maps LDAP Attribute Name `voPer
 [5]: https://github.com/uc-cdis/cloud-automation/blob/master/doc/kube-setup-ssjdispatcher.md
 [6]: https://github.com/uc-cdis/cloud-automation/blob/master/doc/Gen3-data-upload.md
 [7]: https://github.com/uc-cdis/cloud-automation/blob/master/kube/services/tube/README.md
-[8]: https://github.com/uc-cdis/fence/pull/896
-[9]: https://github.com/uc-cdis/fence/blob/master/fence/config-default.yaml
