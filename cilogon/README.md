@@ -34,7 +34,7 @@ Update COmanage to add an OIDC Client to the Collaborative Organisation (CO) tha
 The CILogon OIDC config expects a Gen3 username. The following steps provide a Gen3 username to the CILogon configuration and enable storage of the corresponding value in the CILogon LDAP repository.
 
 From with the CO, add an Extended Type for the Gen3 username (Configuration > Extended Types).
-[[./imgs/extended types.jpg]]
+[[imgs/extended types.jpg]]
 
 Add an Identifier Assignment for a GEN3Username (Configuration > Identifier Assignments).
 [[./imgs/identifier assignment.jpg]]
