@@ -51,4 +51,3 @@ Once the CO has the ability to mint OIDC Clients, click Add a New OIDC Client, f
 
 To retrieve a user’s Gen3Username from LDAP, there should be a LDAP to Claim mapping for voPersonApplicationUID;app-gen3 to OIDC Claim Name sub.
 [[./imgs/OIDC client.jpg]]
-
