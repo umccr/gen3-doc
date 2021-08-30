@@ -54,7 +54,7 @@ The following steps are performed from within the CO requiring access to Gen3.
 
 5) Once the CO has the ability to mint OIDC Clients, click **Add a New OIDC Client**, fill the fields and submit the form. The client ID and secret will be automatically generated. Add the secret to Fence configuration - CILogon only records a secure hash of the value and cannot recover the secret if it is lost. If that happens, just create a new client and reconfigure the service.
 
-For the OIDC Client to retrieve a user’s Gen3Username from LDAP, 
+For the OIDC Client to retrieve a user’s Gen3Username from LDAP, \
 there should be a **LDAP to Claim mapping** for `voPersonApplicationUID;app-gen3` to OIDC Claim Name `sub`.
 
 <img src="./imgs/OIDC client.jpg"/>
