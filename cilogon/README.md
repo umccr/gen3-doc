@@ -50,7 +50,7 @@ The following steps are performed from within the CO requiring access to Gen3.
 
 <img src="./imgs/OIDC client.jpg"/>
 
-**Note:** Minting a new ODIC Claim for Gen3 necessitates that CILogon.org has boarded the CO in order to delegate the management of OIDC clients to the CO. This enables the CO admin or COmanage platform admin to mint new OIDC clients without further approval.
+**Note:** Minting a new ODIC Client requires that CILogon.org has registered the CO for the creation of OIDC Clients. This is necessary for delegating the management of OIDC Clients to the CO. This enables the CO admin or COmanage platform admin to mint new OIDC clients without further approval.
 
 5) Once the CO has the ability to mint OIDC Clients, click **Add a New OIDC Client**, fill the fields and submit the form. The client ID and secret will be automatically generated. Add the secret to Fence configuration - CILogon only records a secure hash of the value and cannot recover the secret if it is lost. If that happens, just create a new client and reconfigure the service.
 
