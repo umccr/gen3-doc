@@ -8,7 +8,7 @@ This demo contains scenario:
 - there exists pre-existing bucket with data
 - create indexd records of these data files using bucket manifest
 - submit (DD graph) metadata for these data files
-- following [granular access to data files](https://gen3.org/resources/operator/#7-how-to-upload-and-control-file-access-via-authz) -- that in-turn, in alignment with [data file metadata `consent_codes` properties](img/agha_gdr_data_file_consent_codes.png)
+- follow [granular access to data files](https://gen3.org/resources/operator/#7-how-to-upload-and-control-file-access-via-authz) -- that in-turn, in line with [data file metadata `consent_codes` properties](img/agha_gdr_data_file_consent_codes.png)
 
 ## 0. Initiate AGHA Program & GDR Submission Project
 
@@ -101,3 +101,36 @@ g3po index manifest
 - You may need to rerun Tube ETL to sync ElasticSearch indexes
 - You may need to update `user.yaml` to take effect on new indexes' authz, if any
 - You may need to update [Fence config](https://github.com/umccr/gen3-doc/blob/main/workshop/fence-config.yaml#L558) to include the new bucket; provide S3 compliant endpoint if it is not native bucket
+
+## 6. Accessing Controlled Data
+
+In order to test data access authorization, we configure `user.yaml` ACL in such that:
+
+- All authenticated users can download Tumor BAM (`demo_mocked_tumor.bam`) from AGHA GDR submission. (i.e. GA4GH Passport Visa scope `AcceptedTermsAndPolicies`, `ResearcherStatus`, etc)
+- Access to Germline BAM (`demo_mocked_germline.bam`) and Somatic VCF (`demo_mocked_somatic.vcf.gz`) must be Consented. (i.e. GA4GH Passport Visa with `ControlledAccessGrants`)
+- _See [Login & Signup section](../../user-guide/login-signup.md) as this plays along those lines in tandem..._
+
+**Statements:**
+
+1. As an authenticated user, verify that you can view AGHA GDR submission through File Exploration as screen described in ☝️ top of the page.
+2. As an authenticated user, verify that you can download Tumor BAM.
+3. As an authenticated user, verify that download attempt to Germline BAM or Somatic VCF return [Unauthorized 401 Error page](img/agha_gdr_demo_unauthorized.png).
+4. As an authenticated [API user](../../user-guide/using-api.md), verify that you can access Tumor BAM through GA4GH DRS Object [PreSigned URL](img/agha_gdr_drs_get_object_tumor.png).
+5. As an authenticated API user, verify that accessing Germline BAM through GA4GH DRS Object access method return [Unauthorized 401 Error](img/agha_gdr_drs_get_object_germline.png).
+6. As an authenticated API user, verify that accessing Somatic VCF through GA4GH DRS Object access method return [Unauthorized 401 Error](img/agha_gdr_drs_get_object_somatic.png).
+7. As an authenticated user, verify that you can access to AGHA GDR project submission page and able to browse through meta-information (metadata) through navigating graph nodes. e.g.
+   - Goto https://gen3.cloud.dev.umccr.org/agha-gdr
+   - Click on "Diagnosis" node > View
+   - Click on "Sample" node > View
+   - _so on so ford_
+
+## 7. Summary
+
+Off the shelf Gen3 deployment ship with Fence and Arborist component which offer access authorization such that
+
+- We can configure granular access control on **_the actual File Object_** in data warehouse by following some consent code or scheme.
+  - Authorization is quite deterministic i.e. happening at File Object indexing time and this can be added/updated later as if access policy changes.
+  - Authorization scheme is just a resource path and, this can be arbitrary; e.g. we made up `/programs/agha/projects/gdr/consents/germline` and, formation of the latter part `consents/germline` can be some scheme or consent code (may/may-not line up with [GA4GH DUO](https://www.ga4gh.org/genomic-data-toolkit/) and/or sync from DAC Portal or COmanage Registry group, if any)
+- At the moment, **_Gen3 has limitation on meta-information protection_**. Metadata access granularity can be only up to Project level (i.e. all or nothing). [Remark from official documentation](https://github.com/uc-cdis/fence/blob/master/docs/user.yaml_guide.md#notes) as follows.
+
+    > While Arborist itself allows granular and inherited access through use of its resource tree / paths, granular access control beyond the program and project in the current Gen3 graph is not supported at the moment.

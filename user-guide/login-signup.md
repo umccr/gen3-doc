@@ -37,10 +37,10 @@ _or Program Enrollment Signup_
 - Goto UMCCR Data Commons Consent Petition URL at:  
 > https://registry-test.biocommons.org.au/registry/co_petitions/start/coef:22
 - Follow screens to select your home institution account and authenticate.
-- At "Self Signup With Approval" screen, fill up mandatory fields (annotated with asterisk * character) and click "Submit" will give you "Thank You for Registering" message.
+- At "Self Signup With Approval" screen, fill up mandatory fields (annotated with asterisk * character) and click "Submit" will give you [**_Thank You for Registering_**](img/cilogon_signup_success_register.png) message.
 - You Signup application is now pending approval and Admins are notified of new enrollment application.
 - Momentarily, you should receive email verification. Please follow up to verification link. You will be (once again) asked to authenticate against your home institution.
-- You should then see "Thank You for Verifying You Email" message.
+- You should then see [**_Thank You for Verifying You Email_**](img/cilogon_signup_success_email_verify.png) message.
 - Once Admin approved your consent petition and, you have verified your email, enrollment is completed.
 
 #### Dataset Consent
