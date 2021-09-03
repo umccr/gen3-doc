@@ -1,0 +1,44 @@
+[
+  {
+    "file_name": "demo_mocked_tumor.bam",
+    "file_size": 1048576,
+    "data_type": "Aligned Reads",
+    "consent_codes": ["tumor"],
+    "object_id": "30fc4617-d666-47da-9f22-99bf8f1ccf30",
+    "data_category": "Sequencing Reads",
+    "read_groups": {
+      "submitter_id": "L0000001"
+    },
+    "submitter_id": "demo_mocked_tumor.bam",
+    "core_metadata_collections": {
+      "submitter_id": "SBJ00001"
+    },
+    "data_format": "BAM",
+    "type": "submitted_aligned_reads",
+    "state_comment": null,
+    "experimental_strategy": "WGS",
+    "md5sum": "12d0530416d935b8f0a26e210d18c39c",
+    "urls": "s3://umccr-test-data-bucket/SBJ00001/demo_mocked_tumor.bam"
+  },
+  {
+    "file_name": "demo_mocked_germline.bam",
+    "file_size": 524288,
+    "data_type": "Aligned Reads",
+    "consent_codes": ["germline"],
+    "object_id": "618c3d68-038c-4dc7-a306-e3f053db7dde",
+    "data_category": "Sequencing Reads",
+    "read_groups": {
+      "submitter_id": "L0000002"
+    },
+    "submitter_id": "demo_mocked_germline.bam",
+    "core_metadata_collections": {
+      "submitter_id": "SBJ00001"
+    },
+    "data_format": "BAM",
+    "type": "submitted_aligned_reads",
+    "state_comment": null,
+    "experimental_strategy": "WGS",
+    "md5sum": "ed6170fd2d45c6779f1555922946d2b3",
+    "urls": "s3://umccr-test-data-bucket/SBJ00001/demo_mocked_germline.bam"
+  }
+]

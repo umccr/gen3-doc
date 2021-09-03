@@ -1,0 +1,22 @@
+{
+  "file_name": "demo_mocked_somatic.vcf.gz",
+  "file_size": 262144,
+  "data_type": "Variants",
+  "total_variants": null, 
+  "consent_codes": null, 
+  "object_id": "65df1736-82cb-498c-8c57-7321901a0de9",
+  "data_category": "Variants",
+  "read_groups": {
+    "submitter_id": "L0000001"
+  }, 
+  "submitter_id": "demo_mocked_somatic.vcf.gz",
+  "core_metadata_collections": {
+    "submitter_id": "SBJ00001"
+  }, 
+  "data_format": "VCF",
+  "type": "submitted_somatic_mutation",
+  "state_comment": null, 
+  "experimental_strategy": "bcftool",
+  "md5sum": "fbbd092bf77294b638befe84ab33f6dc",
+  "urls": "s3://umccr-test-data-bucket/SBJ00001/demo_mocked_somatic.vcf.gz"
+}

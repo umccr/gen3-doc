@@ -1,0 +1,70 @@
+[
+  {
+    "current_weight": 78,
+    "tissue_type": "Tumor",
+    "type": "sample",
+    "initial_weight": 92,
+    "preservation_method": null,
+    "biospecimen_anatomic_site": null,
+    "time_between_clamping_and_freezing": null,
+    "oct_embedded": null,
+    "sample_volume": null,
+    "tumor_code_id": "81",
+    "method_of_sample_procurement": null,
+    "shortest_dimension": null,
+    "longest_dimension": null,
+    "composition": null,
+    "diagnosis_pathologically_confirmed": null,
+    "tumor_descriptor": null,
+    "freezing_method": null,
+    "time_between_excision_and_freezing": null,
+    "subjects": {
+      "submitter_id": "SBJ00001"
+    },
+    "days_to_sample_procurement": null,
+    "intermediate_dimension": null,
+    "is_ffpe": null,
+    "tumor_code": "Colon Cancer (all types)",
+    "days_to_collection": null,
+    "diagnoses": {
+      "submitter_id": "SBJ00001"
+    },
+    "submitter_id": "PRJ000001",
+    "sample_type_id": "99",
+    "sample_type": "DNA"
+  },
+  {
+    "current_weight": 78,
+    "tissue_type": "Normal",
+    "type": "sample",
+    "initial_weight": 92,
+    "preservation_method": null,
+    "biospecimen_anatomic_site": null,
+    "time_between_clamping_and_freezing": null,
+    "oct_embedded": null,
+    "sample_volume": null,
+    "tumor_code_id": "81",
+    "method_of_sample_procurement": null,
+    "shortest_dimension": null,
+    "longest_dimension": null,
+    "composition": null,
+    "diagnosis_pathologically_confirmed": null,
+    "tumor_descriptor": null,
+    "freezing_method": null,
+    "time_between_excision_and_freezing": null,
+    "subjects": {
+      "submitter_id": "SBJ00001"
+    },
+    "days_to_sample_procurement": null,
+    "intermediate_dimension": null,
+    "is_ffpe": null,
+    "tumor_code": "Colon Cancer (all types)",
+    "days_to_collection": null,
+    "diagnoses": {
+      "submitter_id": "SBJ00001"
+    },
+    "submitter_id": "PRJ000002",
+    "sample_type_id": "99",
+    "sample_type": "DNA"
+  }
+]

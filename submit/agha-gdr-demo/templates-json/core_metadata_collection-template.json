@@ -1,0 +1,21 @@
+{
+  "format": null, 
+  "rights": null, 
+  "subject": null, 
+  "data_type": null, 
+  "creator": null, 
+  "publisher": null, 
+  "language": null, 
+  "projects": {
+    "code": "gdr"
+  }, 
+  "title": "SBJ00001",
+  "description": "SBJ00001 Core Metadata Collection",
+  "relation": null, 
+  "submitter_id": "SBJ00001",
+  "source": null, 
+  "coverage": null, 
+  "type": "core_metadata_collection",
+  "contributor": null, 
+  "date": "2021-05-17"
+}

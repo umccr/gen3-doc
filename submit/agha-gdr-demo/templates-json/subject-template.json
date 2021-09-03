@@ -1,0 +1,10 @@
+{
+  "disease_type": null, 
+  "primary_site": null, 
+  "consent_codes": ["tumor", "germline", "vcf"],
+  "projects": {
+    "code": "gdr"
+  }, 
+  "submitter_id": "SBJ00001",
+  "type": "subject"
+}
