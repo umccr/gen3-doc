@@ -1,0 +1,24 @@
+[
+  {
+    "file_name": "NA12878_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-Solid-10X_CHROM1-X_v3.3_highconf.vcf.gz",
+    "file_size": 122051465,
+    "data_type": "Variants",
+    "total_variants": null,
+    "consent_codes": null,
+    "object_id": "113b5803-7636-453b-b31a-2a5de4984f65",
+    "data_category": "Variants",
+    "read_groups": {
+      "submitter_id": "NIST7035"
+    },
+    "submitter_id": "giab.NA12878",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878"
+    },
+    "data_format": "VCF",
+    "type": "submitted_somatic_mutation",
+    "state_comment": null,
+    "experimental_strategy": "bcftool",
+    "md5sum": "533dc1ad5a53680d8af5ce8bd47f7a9b",
+    "urls": "htsget://htsget.ga4gh.org/variants/giab.NA12878"
+  }
+]

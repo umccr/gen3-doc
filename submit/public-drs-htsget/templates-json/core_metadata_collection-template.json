@@ -1,0 +1,21 @@
+{
+  "format": null, 
+  "rights": null, 
+  "subject": null, 
+  "data_type": null, 
+  "creator": null, 
+  "publisher": null, 
+  "language": null, 
+  "projects": {
+    "code": "public"
+  }, 
+  "title": null,
+  "description": null, 
+  "relation": null, 
+  "submitter_id": "NA12878",
+  "source": null, 
+  "coverage": null, 
+  "type": "core_metadata_collection",
+  "contributor": null, 
+  "date": "2021-09-08"
+}

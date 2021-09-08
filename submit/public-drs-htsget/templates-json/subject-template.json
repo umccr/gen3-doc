@@ -1,0 +1,10 @@
+{
+  "disease_type": null, 
+  "primary_site": null, 
+  "consent_codes": null, 
+  "projects": {
+    "code": "public"
+  },
+  "submitter_id": "NA12878",
+  "type": "subject"
+}

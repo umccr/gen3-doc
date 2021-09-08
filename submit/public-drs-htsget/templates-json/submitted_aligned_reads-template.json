@@ -1,0 +1,86 @@
+[
+  {
+    "file_name": "project.NIST_NIST7035_H7AP8ADXX_TAAGGCGA_1_NA12878.bwa.markDuplicates.bam",
+    "file_size": 3020450026,
+    "data_type": "Aligned Reads",
+    "consent_codes": null,
+    "object_id": "85007fa3-9e65-4e7f-9514-b08b2ad1461c",
+    "data_category": "Sequencing Reads",
+    "read_groups": {
+      "submitter_id": "NIST7035"
+    },
+    "submitter_id": "giab.NA12878.NIST7035.1",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878"
+    },
+    "data_format": "BAM",
+    "type": "submitted_aligned_reads",
+    "state_comment": null,
+    "experimental_strategy": "WGS",
+    "md5sum": "edb7bba8479cf224bf3015fdfda44f39",
+    "urls": "htsget://htsget.ga4gh.org/reads/giab.NA12878.NIST7035.1"
+  },
+  {
+    "file_name": "project.NIST_NIST7035_H7AP8ADXX_TAAGGCGA_2_NA12878.bwa.markDuplicates.bam",
+    "file_size": 3097198251,
+    "data_type": "Aligned Reads",
+    "consent_codes": null,
+    "object_id": "bc9ef88a-ee77-4a3d-8f5a-b1160fafb230",
+    "data_category": "Sequencing Reads",
+    "read_groups": {
+      "submitter_id": "NIST7035.2"
+    },
+    "submitter_id": "giab.NA12878.NIST7035.2",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878"
+    },
+    "data_format": "BAM",
+    "type": "submitted_aligned_reads",
+    "state_comment": null,
+    "experimental_strategy": "WGS",
+    "md5sum": "90d7a35bd59971c44f528427a0b2da45",
+    "urls": "htsget://htsget.ga4gh.org/reads/giab.NA12878.NIST7035.2"
+  },
+  {
+    "file_name": "project.NIST_NIST7086_H7AP8ADXX_CGTACTAG_1_NA12878.bwa.markDuplicates.bam",
+    "file_size": 3220671040,
+    "data_type": "Aligned Reads",
+    "consent_codes": null,
+    "object_id": "8a8d1f93-a7f1-4da2-a46c-7f947d1d389c",
+    "data_category": "Sequencing Reads",
+    "read_groups": {
+      "submitter_id": "NIST7086"
+    },
+    "submitter_id": "giab.NA12878.NIST7086.1",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878"
+    },
+    "data_format": "BAM",
+    "type": "submitted_aligned_reads",
+    "state_comment": null,
+    "experimental_strategy": "WGS",
+    "md5sum": "1246c31ecfe53e9f55bb4890d16ebb9a",
+    "urls": "htsget://htsget.ga4gh.org/reads/giab.NA12878.NIST7086.1"
+  },
+  {
+    "file_name": "project.NIST_NIST7086_H7AP8ADXX_CGTACTAG_2_NA12878.bwa.markDuplicates.bam",
+    "file_size": 3294853760,
+    "data_type": "Aligned Reads",
+    "consent_codes": null,
+    "object_id": "ad3b1667-54ed-439d-ac3a-e218f89e24dd",
+    "data_category": "Sequencing Reads",
+    "read_groups": {
+      "submitter_id": "NIST7086.2"
+    },
+    "submitter_id": "giab.NA12878.NIST7086.2",
+    "core_metadata_collections": {
+      "submitter_id": "NA12878"
+    },
+    "data_format": "BAM",
+    "type": "submitted_aligned_reads",
+    "state_comment": null,
+    "experimental_strategy": "WGS",
+    "md5sum": "08f63aba86cad1cde5ace41b602cb347",
+    "urls": "htsget://htsget.ga4gh.org/reads/giab.NA12878.NIST7086.2"
+  }
+]

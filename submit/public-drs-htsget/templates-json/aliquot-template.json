@@ -1,0 +1,30 @@
+[
+  {
+    "amount": null,
+    "aliquot_volume": null,
+    "analyte_type": null,
+    "source_center": null,
+    "concentration": null,
+    "submitter_id": "NIST7035",
+    "aliquot_quantity": null,
+    "samples": {
+      "submitter_id": "NIST7035"
+    },
+    "type": "aliquot",
+    "analyte_type_id": null
+  },
+  {
+    "amount": null,
+    "aliquot_volume": null,
+    "analyte_type": null,
+    "source_center": null,
+    "concentration": null,
+    "submitter_id": "NIST7086",
+    "aliquot_quantity": null,
+    "samples": {
+      "submitter_id": "NIST7086"
+    },
+    "type": "aliquot",
+    "analyte_type_id": null
+  }
+]
