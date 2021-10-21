@@ -2,37 +2,20 @@
 
 These are notes on the UMCCR specific setup of the [Gen3 cloud deployment][1].
 
-- [Gen3 Cloud Native EKS Setup](#gen3-cloud-native-eks-setup)
-	- [Basic setup](#basic-setup)
-		- [Part 1 Admin VM](#part-1-admin-vm)
-		- [Part 2 Start Gen3 - Infrastructure](#part-2-start-gen3---infrastructure)
-		- [Part 3 Kubernetes Cluster - Infrastructure](#part-3-kubernetes-cluster---infrastructure)
-		- [Part 4 Kubernetes Services](#part-4-kubernetes-services)
-		- [Check Kubernetes services](#check-kubernetes-services)
-	- [Additional setup](#additional-setup)
-		- [Elastic Search & Guppy](#elastic-search--guppy)
-		- [SSJDISPATCHER](#ssjdispatcher)
-		- [Fence](#fence)
-		- [Tube](#tube)
-		- [Portal Config](#portal-config)
-		- [CILogon](#cilogon)
-
-
 ## Basic setup
 
 The basic setup follows along the [csoc-free-commons-steps][2] described in GitHub. It is a quick run through the steps we needed to perform to get that initial setup up and running. It also contains pointers for things to look out for, that otherwise may get you into trouble during setup or further down the road.
 
-NOTE: this is not our fully featured production setup. For more information on that, see the sections in [Additional setup](#additional-setup) below.
+### Part 1: Admin VM
 
+#### AWS EC2 admin server
 
-### Part 1 Admin VM
+_UMCCR setup summary:_ 
 
-AWS EC2 admin server
-
-UMCCR setup:
+Gen3 deployment/management scripts depend on the `$HOME` variable, hence it's easiest to setup Gen3 from the users home directory. We currently create EC2 volume snapshots in order to preserve the Gen3 setup/configuration. To keep these snapshots small and facilitate reuse across instances (which is difficult with root volumes), we add a second volume to the instance. We generate a new OS user with a custom `$HOME` directory in order to split this data from the default root volume.
 
 - Ubuntu 18.04 server (issues with newer versions or other OS)
-- t2.meduim
+- t2.medium
 - min 15GB disk
 - hibernation enabled (in order to be able to shut down the admin VM when not needed. Longer term plan to restore admin VM from scratch from backed up configuration/data)
 - admin like IAM role (`gen3-admin-vm-instance-role`)
@@ -41,25 +24,30 @@ UMCCR setup:
 - Gen3 config/data volume in addition to the default root volume (see below)
 - custom user `gen3-user`
 
-Gen3 deployment/management scripts depend on the `$HOME` variable, hence it's easiest to setup Gen3 from the users home directory. We currently craete EC2 volume snapshots in order to preserve the Gen3 setup/configuration. To keep these snapshots small and facilitate reuse across instances (which is difficult with root volumes), we add a second volume to the instance. We generate a new OS user with a custom `$HOME` directory in order to split this data from the default root volume.
+We have CDK stack for aforementioned setup as follows:
+- https://github.com/umccr/infrastructure/tree/master/cdk/apps/gen3_admin_vm
 
+We also use our fork with regional fixes:
+- https://github.com/umccr/cloud-automation/tree/umccr
 
+#### Bootstrap admin server
 
-
-Follow the Gen3 setup steps
 ```bash
 # working outside the users $HOME caused issues (as it is assumed in various scripts)
 cd $HOME
-# Note: Terraform updated their certificates which means you may run into issues with older source versions (0.11.14).
-#       We tried the master (at 6cbb6035), which contained a TF version update (0.11.15) to fix this issue
-git clone https://github.com/uc-cdis/cloud-automation.git
+
+# we retain our fork with 'umccr' branch for any changes
+git clone https://github.com/umccr/cloud-automation.git
+cd cloud-automation
+git checkout umccr
+
 export GEN3_HOME="$HOME/cloud-automation"
 export GEN3_NOPROXY='no'
-# be careful to retain the env vars when running the setup script
-sudo -E bash cloud-automation/gen3/bin/kube-setup-workvm.sh
 
-# Double check the entries created in the .bashrc
-# NOTE: make sure the Gen3 env name (VPC name) is no longer than 14 characters, as other resouece names (specifically the AWS #       Elastic Search domain) are derived from it and have size limitations attached.
+# be careful to retain the env vars when running the setup script
+bash cloud-automation/gen3/bin/kube-setup-workvm.sh
+
+# double check the entries created in the .bashrc
 vim ${HOME}/.bashrc
 source ${HOME}/.bashrc
 
@@ -69,27 +57,26 @@ source ${HOME}/.bashrc
 echo "[default]
 output = json
 region = ap-southeast-2
-#credential_source = Ec2InstanceMetadata
 
 [profile cdistest]
 output = json
 region = ap-southeast-2" > ~/.aws/config
 ```
 
+### Part 2: Common Stack
+
+- At the point, you need to provision the following resources:
+  - Decide on domain name to use e.g. `gen3.agha.umcc.org` 
+  - Create Route53 hosted zone if you are sub-zoning, if any
+  - Create ACM certificate for your chosen domain name
 
 
-### Part 2 Start Gen3 - Infrastructure
+- Note that in the following terraform common stack setup, it will take the stack name `umccr-prod` as a name to create a VPC. Make sure this common stack name (VPC name) is **no longer than 14 characters**, as other resource names (specifically the AWS ElasticSearch domain name) are derived from it and, have size limitations attached.
 
 ```bash
-gen3 workon cdistest umccr-test
-# may have to create S3 bucket manually if TF raises issues
-# e.g. aws s3 mb s3://cdis-state-ac064933140851-gen3
+gen3 workon umccr umccr-prod
+
 gen3 cd
-
-# Fix squid issue cross account issue (see: https://github.com/uc-cdis/cloud-automation/pull/1507)
-
-# TEMP ONLY: Remove CloudTrail setup from TF stack (currently denied on UoM AWS)
-rm ${GEN3_HOME}/tf_files/aws/modules/upload-data-bucket/cloud-trail.tf
 
 # update/complete config.tfvars according to documentation
 vim config.tfvars
@@ -102,16 +89,15 @@ gen3 tfapply
 cp umccr-test_output/* $HOME/Gen3Secrets/
 ```
 
+### Part 3: Kubernetes Cluster
 
-
-### Part 3 Kubernetes Cluster - Infrastructure
+- Generate new key pair through `EC2 Console > Network & Security > Key Pairs` with key name, e.g. `gen3-cloud-kube-worker`. This will be needed in `config.tfvars`.
 
 ```bash
 gen3 workon cdistest umccr-test_eks
 gen3 cd
 
 # update/complete config.tfvars according to documentation
-# Fix hard coded availability zones in TF EKS module (see: https://github.com/uc-cdis/cloud-automation/pull/1573)
 vim config.tfvars
 
 gen3 tfplan
@@ -121,24 +107,45 @@ gen3 tfapply
 cp umccr-test_output_EKS/kubeconfig $HOME/Gen3Secrets/
 ```
 
-
-
-### Part 4 Kubernetes Services
+### Part 4: ElasticSearch
 
 ```bash
-# Create manifest.json following documentation
-mkdir -p ${HOME}/cdis-manifest/gen3.cloud.dev.umccr.org
+gen3 workon cdistest umccr-test_es
+gen3 cd
 
-# adjust ${HOME}/.bashrc (see bash-extensions.txt)
+# update/complete config.tfvars according to documentation
+vim config.tfvars
+
+gen3 tfplan
+gen3 tfapply
+```
+
+### Part 5: Deployment Manifest
+
+Prepare deployment manifest for the Gen3 instance, e.g. `gen3.agha.umccr.org` and, create `cdis-manifest` repo as follows.
+
+- https://github.com/umccr/cdis-manifest
+
+Next, on Admin VM, clone this manifest repo as follows.
+
+```bash
+cd $HOME
+git clone https://github.com/umccr/cdis-manifest.git
+```
+
+Note: if you are new to [GitOps concept](https://www.google.com/search?q=What+is+GitOps%3F), it is recommended to do some reading around the concept.
+
+### Part 6: Kubernetes Services
+
+```bash
 source ${HOME}/.bashrc
+
 kubectl apply -f ${HOME}/Gen3Secrets/00configmap.yaml
 kubectl get nodes
 gen3 roll all
 ```
 
-
-
-### Check Kubernetes services
+#### Checking Kubernetes services
 
 By now you should have a basic Gen3 cloud deployment running. You should be able to run kubectl commands to inspect your cluster.
 
@@ -162,21 +169,7 @@ Once the Kubernetes cluster is up and running additional services can usually be
 
 Below are examples of services that required additional work.
 
-### Elastic Search & Guppy
-
-A production release of Gen3 typically comes with an Elastic Search component. This is not part of the default setup described in the [csoc-free-commons-steps][2]. It utilises the AWS Elastic Search managed service and hence requires additional infrastructure to be deployed.
-
-We follow the basic steps to add another infrastructure component:
-```bash
-gen3 workon cdistest umccr-test_es
-gen3 cd
-
-# update/complete config.tfvars according to documentation
-vim config.tfvars
-
-gen3 tfplan
-gen3 tfapply
-```
+### ElasticSearch & Guppy
 
 As mentioned in the [gen3OnK8s][3] docs, Kubernetes uses a manifest file to define which services to run and how to configure them. An example can be found [here][4].
 
