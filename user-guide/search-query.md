@@ -2,11 +2,11 @@
 
 ## Context
 
-In short, there are two persistence data store behind Gen3.
+In short, there are two major persistence data stores for querying submitted data in Gen3:
 1. Indexd database
 2. Graph metadata database
 
-Indexd responsible for file object data indexes (i.e. where data actually sit). Graph metadata responsible for all metadata for the submitted file object such as Clinical meta-info, Demographic, Sequencing information, and all other terms lookup and ontology.
+Indexd responsible for file object data indexes (i.e. where data actually sit). Graph metadata responsible for all metadata for the submitted file object such as Clinical meta-info, Demographic, Sequencing information, and all other terms and ontology.
 
 Hence, possible actions you can make are:
 1. Indexd query or GA4GH DRS query for globally unique identifier (GUID) of a file object
@@ -72,11 +72,11 @@ GraphQL looks like as follows. It basically walks-through node in the data dicti
 
 - We can't skip node, off the shelf.
 
-- However, there can be 'custom' hidden logical node resolver built for this kind of use case - such that, this custom node resolver is derivation of some  nodes in DD Graph.
+- However, there can be 'custom' logical node resolver built for this kind of use case - such that, this custom node resolver is derivation of some  nodes in Data Dictionary (DD) Graph.
 
 As an example:
 
-- Current Gen3 comes built-in node called `datanode`. This is a custom node for GraphQL purpose (i.e. we do not model this node in metadata Graph). It builds on top of all properties from Data File node category (+ some of its parent properties).
+- Current Gen3 comes built-in node called `datanode`. This is a custom node for GraphQL purpose (i.e. we do not model this node in metadata Graph). It builds on top of properties from Data File node category (+ some of its parent properties).
 - Then, we can have a _cross-cut_ query like: **Give me all Object ID(s) where `experimental_strategy` is WGS (i.e. Assay Type is WGS)**
 
 ![graphql_example_2.png](img/graphql_example_2.png)

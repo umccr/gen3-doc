@@ -2,9 +2,9 @@
 
 > Q. How do I submit pre-existing backlog of big data, like 1 PetaByte?
 > 
-> A. You will need minimally file object manifest. Continue reading for how.
+> A. You will need file object manifest, minimally. Continue reading for how.
 
-> Q. Do we need _physically_ need to move pre-existing data buckets into Gen3 instance?
+> Q. Do we _physically_ need to move pre-existing data buckets into Gen3 instance?
 > 
 > A. No. Your existing data can be kept as-is where they are. This includes some data volume in HPC. You just index them using manifest. Continue reading for how.
 
