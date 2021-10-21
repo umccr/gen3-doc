@@ -1,4 +1,6 @@
-# Data Submission
+# Data Submission (User Flow)
+
+> This is Data Submission (User Flow). For _manifest-based_ approach, see [submit](../submit).
 
 In this exercise, we will be submitting "Experimental Metadata File". A subset of data model graph as follows:
 
@@ -136,4 +138,3 @@ _Mapping uploaded file_
 - https://gen3.org/resources/user/gen3-client/
 - https://gen3.org/resources/user/access-data/
 - https://gen3.org/resources/user/submit-data/
-- https://gen3.org/resources/user/submit-data/sower/  
