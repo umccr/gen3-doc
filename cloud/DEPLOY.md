@@ -1,10 +1,10 @@
 # Gen3 Cloud Native EKS Setup
 
-These are notes on the UMCCR specific setup of the [Gen3 cloud deployment][1].
+These are UMCCR notes on getting up and running of the [Gen3 Cloud Automation][1] deployment. Gen3 comprises multiple software components; deploy and run in Microservices fashion. The focus here is to up and run those fundamental mandatory Gen3 services or, baseline operation of the platform.
 
-## Basic setup
+## Infrastructure Setup
 
-The basic setup follows along the [csoc-free-commons-steps][2] described in GitHub. It is a quick run through the steps we needed to perform to get that initial setup up and running. It also contains pointers for things to look out for, that otherwise may get you into trouble during setup or further down the road.
+It follows along the [csoc-free-commons-steps][2] described in GitHub. It is a quick run through the steps we needed to perform to get that initial setup up and running. It also contains pointers for things to look out for, that otherwise may get you into trouble during setup or further down the road.
 
 ### Part 1: Admin VM
 
@@ -27,7 +27,7 @@ Gen3 deployment/management scripts depend on the `$HOME` variable, hence it's ea
 We have CDK stack for aforementioned setup as follows:
 - https://github.com/umccr/infrastructure/tree/master/cdk/apps/gen3_admin_vm
 
-We also use our fork with regional fixes:
+We also use our fork with regional and few fixes:
 - https://github.com/umccr/cloud-automation/tree/umccr
 
 #### Bootstrap admin server
@@ -91,7 +91,7 @@ cp umccr-test_output/* $HOME/Gen3Secrets/
 
 ### Part 3: Kubernetes Cluster
 
-- Generate new key pair through `EC2 Console > Network & Security > Key Pairs` with key name, e.g. `gen3-cloud-kube-worker`. This will be needed in `config.tfvars`.
+- Generate new key pair through `EC2 Console > Network & Security > Key Pairs` with key name, e.g. `gen3-cloud-kube-worker` and, save the private key. This will be needed in `config.tfvars` and, later when we want to ssh into Worker nodes.
 
 ```bash
 gen3 workon cdistest umccr-test_eks
@@ -135,19 +135,21 @@ git clone https://github.com/umccr/cdis-manifest.git
 
 Note: if you are new to [GitOps concept](https://www.google.com/search?q=What+is+GitOps%3F), it is recommended to do some reading around the concept.
 
-### Part 6: Kubernetes Services
+### Part 6: Gen3 Services
+
+As mentioned in the [Gen3OnK8s][3] docs, Kubernetes uses a manifest file to define which services to run and how to configure them. An example can be found [here][4]. Then, we call roll all command to provision all Gen3 services that defined in deployment manifest.
 
 ```bash
 source ${HOME}/.bashrc
 
 kubectl apply -f ${HOME}/Gen3Secrets/00configmap.yaml
-kubectl get nodes
+
 gen3 roll all
 ```
 
 #### Checking Kubernetes services
 
-By now you should have a basic Gen3 cloud deployment running. You should be able to run kubectl commands to inspect your cluster.
+By now you should have a basic Gen3 cloud deployment running. You should be able to run `kubectl` commands to inspect your cluster.
 
 Examples:
 ```bash
@@ -158,90 +160,21 @@ kubectl get deploy
 kubectl describe configmap -n kube-system aws-auth
 
 kubectl logs -f fence-deployment-b6cf954d9-jt9xt -c fence
-...
 ```
 
 
-## Additional setup
+## Configuring Gen3 Services
 
-Once the Kubernetes cluster is up and running additional services can usually be integrated on the Kubernetes level. Exceptions are services that depend on (AWS) infrastructure that is not managed by Kubernetes.
-[Here][3] is a quick overview of how Kubernetes is used and configured for Gen3.
+Once the Kubernetes cluster is up and running, we configure Gen3 services that is deployed into Kubernetes cluster. You may add or remove Gen3 components that fit for your use case. 
 
-Below are examples of services that required additional work.
+The following are break-out notes on configuring each Gen3 services. You may be repeating these steps as if needed. 
 
-### ElasticSearch & Guppy
+### Domain Name
 
-As mentioned in the [gen3OnK8s][3] docs, Kubernetes uses a manifest file to define which services to run and how to configure them. An example can be found [here][4].
+The following command should give you the hostname you can direct your browser to in order to access your Gen3 service. We map this to our custom domain (e.g. `gen3.cloud.dev.umccr.org`) using AWS `Route53`.
 
-Following this guide setup your etlMapping and gitops config.
-```bash
-cd cdis-manifest/gen3.cloud.dev.umccr.org/
-vim etlMapping.yaml
-
-mkdir portal
-cd portal
-vim gitops.json
-```
-
-NOTE: the Guppy service may require existing indexes and fail on a clean setup. If so, disable it initially until the first data is loaded.
-```bash
-vim cdis-manifest/gen3.cloud.dev.umccr.org/manifest.json
-
-source ${HOME}/.bashrc
-
-kubectl apply -f ${HOME}/Gen3Secrets/00configmap.yaml
-
-gen3 roll all
-gen3 reset
-```
-
-Once data is loaded and Elastic Search indexes are available add the Guppy service back into the mainfest and deploy it.
-```bash
-kubectl get pod
-gen3 roll guppy
-
-kubectl describe cm manifest-guppy
-kubectl logs guppy-deployment-yyyyyyyyyy-xxxxx
-```
-
-
-
-The following command should give you the hostname you can direct your browser to in order to access your Gen3 service.
-We map this to our custom domain (gen3.cloud.dev.umccr.org) using AWS `Route53`.
 ```bash
 kubectl get service revproxy-service-elb -o json | jq -r .status.loadBalancer.ingress[].hostname
-```
-
-
-### SSJDISPATCHER
-
-This service is required for the data (file) upload.
-
-Have a look at the [kube setup][5] and the [data upload][6] for more details.
-
-```bash
-gen3 kube-setup-ssjdispatcher auto
-
-kubectl get secret ssjdispatcher-creds
-kubectl describe secret ssjdispatcher-creds
-gen3 secrets decode ssjdispatcher-creds | less
-
-gen3 workon cdistest umccr-test
-gen3 cd
-gen3 tfoutput
-
-    "fence-bot_user_id": {
-        "sensitive": false,
-        "type": "string",
-        "value": "EXAMPLEIDEXAMPLEID"
-    },
-    "fence-bot_user_secret": {
-        "sensitive": false,
-        "type": "string",
-        "value": "examplesecretexamplesecretexamplesecret"
-    },
-
-vi $HOME/Gen3Secrets/apis_configs/fence-config.yaml
 ```
 
 ### Fence
@@ -267,21 +200,15 @@ kubectl delete secret fence-config && gen3 kube-setup-fence
 # get the location of the current user.yaml
 kubectl get configmap manifest-global -o=jsonpath='{.data.useryaml_s3path}'
 
-# check logs
-kubectl logs useryaml-xxxxx
-gen3 job logs useryaml
-
-# refresh user config and check logs
+# refresh user.yaml config and check logs
 gen3 job run usersync
-kubectl logs usersync-xxxxx fence
-
-gen3 job run useryaml
-kubectl logs useryaml-xxxxx
+gen3 job logs usersync
 ```
+
 
 ### Tube
 
-The Tube service translates between the hierarchical DB data model and seach optimised flat indexes in Elastic Search. See [here][7] for more details.
+The Tube service translates between the hierarchical DB data model and seach optimised flat indexes in ElasticSearch. See [here][7] for more details.
 
 ```bash
 # roll specific service as usual
@@ -318,6 +245,69 @@ green open etl-array-config_0  YQZWGu6XTp2YLpmTNRURJg 5 1  1 0   8.8kb   4.4kb
 green open file_0              Q4vU-nxSSTCOfSzci5H6_w 5 1 60 0 847.3kb 423.6kb
 ****
 ```
+
+
+### ElasticSearch & Guppy
+
+Following this guide setup your etlMapping and gitops config.
+```bash
+cd cdis-manifest/gen3.cloud.dev.umccr.org/
+vim etlMapping.yaml
+
+mkdir portal
+cd portal
+vim gitops.json
+```
+
+NOTE: the Guppy service may require existing indexes and fail on a clean setup. If so, disable it initially until the first data is loaded.
+
+```bash
+vim cdis-manifest/gen3.cloud.dev.umccr.org/manifest.json
+
+gen3 reset
+```
+
+Once data is loaded and ElasticSearch indexes are available add the Guppy service back into the manifest and deploy it.
+```bash
+kubectl get pod
+gen3 roll guppy
+
+kubectl describe cm manifest-guppy
+kubectl logs guppy-deployment-yyyyyyyyyy-xxxxx
+```
+
+
+### SSJDISPATCHER
+
+This service is required for the data (file) upload.
+
+Have a look at the [kube setup][5] and the [data upload][6] for more details.
+
+```bash
+gen3 kube-setup-ssjdispatcher auto
+
+kubectl get secret ssjdispatcher-creds
+kubectl describe secret ssjdispatcher-creds
+gen3 secrets decode ssjdispatcher-creds | less
+
+gen3 workon cdistest umccr-test
+gen3 cd
+gen3 tfoutput
+
+    "fence-bot_user_id": {
+        "sensitive": false,
+        "type": "string",
+        "value": "EXAMPLEIDEXAMPLEID"
+    },
+    "fence-bot_user_secret": {
+        "sensitive": false,
+        "type": "string",
+        "value": "examplesecretexamplesecretexamplesecret"
+    },
+
+vi $HOME/Gen3Secrets/apis_configs/fence-config.yaml
+```
+
 
 ### Portal Config
 

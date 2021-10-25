@@ -1,5 +1,12 @@
 # AGHA GDR Demo Submission with Consent AuthZ
 
+**Context:**
+
+> **Q.** For example if the submission files contain BAMs and VCFs, could we limit access to only the BAMs? Even further, if there are Germline and Tumour BAMs, could be limit access to only Tumour BAMs? Could we grant access to say all VCFs regardless of which project/graph path?
+> 
+> **A.** Yes, we can consent coded data files. Please continue reading...
+
+
 > https://gen3.cloud.dev.umccr.org/agha-gdr
 
 ![agha_gdr_demo_files_explorer.png](img/agha_gdr_demo_files_explorer.png)
