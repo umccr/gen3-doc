@@ -61,5 +61,6 @@ curl -s -H "Authorization: Bearer $GEN3_TOKEN" "https://gen3.cloud.dev.umccr.org
 
 ## REF
 
+- https://github.com/uc-cdis/indexd/blob/master/docs/drs.md
 - https://gen3.org/resources/user/using-api/
 - https://github.com/ga4gh/fasp-scripts
