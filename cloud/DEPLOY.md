@@ -1,6 +1,10 @@
 # Gen3 Cloud Native EKS Setup
 
-These are UMCCR notes on getting up and running of the [Gen3 Cloud Automation][1] deployment. Gen3 comprises multiple software components; deploy and run in Microservices fashion. The focus here is to up and run those fundamental mandatory Gen3 services or, baseline operation of the platform.
+These are UMCCR notes on getting up and running of the [Gen3 Cloud Automation][1] deployment. Gen3 comprises multiple software components; deploy and run in Microservices fashion. The focus here is to up and run those _mandatory_ Gen3 services or, baseline operation of the platform.
+
+### Prerequisite
+
+> Please see [AWS](AWS.md) notes.
 
 ## Infrastructure Setup
 
@@ -66,15 +70,15 @@ region = ap-southeast-2" > ~/.aws/config
 ### Part 2: Common Stack
 
 - At the point, you need to provision the following resources:
-  - Decide on domain name to use e.g. `gen3.agha.umcc.org` 
+  - Decide on domain name to use e.g. `gen3.cloud.dev.umcc.org` 
   - Create Route53 hosted zone if you are sub-zoning, if any
   - Create ACM certificate for your chosen domain name
 
 
-- Note that in the following terraform common stack setup, it will take the stack name `umccr-prod` as a name to create a VPC. Make sure this common stack name (VPC name) is **no longer than 14 characters**, as other resource names (specifically the AWS ElasticSearch domain name) are derived from it and, have size limitations attached.
+- Note that in the following terraform common stack setup, it will take the stack name `umccr-test` as a name to create a VPC. Make sure this common stack name (VPC name) is **no longer than 14 characters**, as other resource names (specifically the AWS ElasticSearch domain name) are derived from it and, have size limitations attached.
 
 ```bash
-gen3 workon umccr umccr-prod
+gen3 workon cdistest umccr-test
 
 gen3 cd
 
@@ -122,7 +126,7 @@ gen3 tfapply
 
 ### Part 5: Deployment Manifest
 
-Prepare deployment manifest for the Gen3 instance, e.g. `gen3.agha.umccr.org` and, create `cdis-manifest` repo as follows.
+Prepare deployment manifest for the Gen3 instance, e.g. `gen3.cloud.dev.umccr.org` and, create `cdis-manifest` repo as follows.
 
 - https://github.com/umccr/cdis-manifest
 
