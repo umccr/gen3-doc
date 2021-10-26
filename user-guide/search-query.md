@@ -104,6 +104,7 @@ _a.k.a. Cross data warehouse searches or Cross Gen3 instance searches_
 
 - To explain further, making it GraphQL API (hence, Graph data dictionary schema) is - a **Specific data model** or use case, rather than **General model** that fit all use cases.
 - In fact, GraphQL is born out of how REST API deficient in expressiveness and related entities fetching.
+- This also echo Gen3 Data Dictionary [design_notes.md](https://github.com/uc-cdis/datadictionary/blob/develop/design_notes.md)
 
 Here are some key properties of GraphQL:
 
@@ -119,9 +120,10 @@ There are seemingly 2 techniques for answering GraphQL federated searches:
 
 Hence, federated searches!
 
-#### Supplementary Reading on GraphQL federation
+<details>
+<summary>Supplementary Reading on GraphQL federation</summary>
 
-The following are some articles and content regarding GraphQL federation.
+The following are some articles and content regarding GraphQL federation. 
 
 Articles:
 - https://www.graphql-tools.com/docs/schema-stitching/stitch-combining-schemas
@@ -136,6 +138,9 @@ Netflix case study:
 - [How Netflix Scales Its API with GraphQL Federation](https://www.youtube.com/watch?v=QrEOvHdH2Cg)
 - https://netflixtechblog.com/how-netflix-scales-its-api-with-graphql-federation-part-1-ae3557c187e2
 - https://netflixtechblog.com/how-netflix-scales-its-api-with-graphql-federation-part-2-bbe71aaec44a
+
+</details>
+
 
 ## Summary
 
