@@ -288,12 +288,19 @@ This service is required for the data (file) upload.
 Have a look at the [kube setup][5] and the [data upload][6] for more details.
 
 ```bash
+gen3 kube-setup-ssjdispatcher --help
+
+# note this 'auto' mode will create another upload bucket again!  
 gen3 kube-setup-ssjdispatcher auto
+
+# perhaps we pass-in data bucket and SQS queue created from "Part 2: Common Stack", e.g.
+gen3 kube-setup-ssjdispatcher umccr-test-data-bucket https://sqs.ap-southeast-2.amazonaws.com/012345678912/umccr-test-data-bucket_data_upload
 
 kubectl get secret ssjdispatcher-creds
 kubectl describe secret ssjdispatcher-creds
 gen3 secrets decode ssjdispatcher-creds | less
 
+# fence-bot IAM user credentials is in Common Stack terraform output
 gen3 workon cdistest umccr-test
 gen3 cd
 gen3 tfoutput
@@ -309,6 +316,7 @@ gen3 tfoutput
         "value": "examplesecretexamplesecretexamplesecret"
     },
 
+# use ☝️ IAM user cred to configure upload bucket in fence config
 vi $HOME/Gen3Secrets/apis_configs/fence-config.yaml
 ```
 
