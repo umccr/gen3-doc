@@ -316,7 +316,7 @@ gen3 tfoutput
         "value": "examplesecretexamplesecretexamplesecret"
     },
 
-# use ☝️ IAM user cred to configure upload bucket in fence config
+# use fence-bot IAM user cred to configure upload bucket in fence config
 vi $HOME/Gen3Secrets/apis_configs/fence-config.yaml
 ```
 
