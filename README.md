@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/355416674.svg)](https://zenodo.org/badge/latestdoi/355416674)
+
 # UMCCR Gen3 Doc
 
 Contains documentation and notes for UMCCR Gen3 setup
